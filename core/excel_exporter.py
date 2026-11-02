@@ -31,7 +31,7 @@ class ExcelExporter:
             "Ads Ativos", "Longevidade", "Views Estimadas", "Gasto Estimado (R$)", 
             "Fat. Estimado (R$)", "Status Tração", "Preço Front", "Checkout", 
             "Link Landing Page", "Headline da LP",
-            "[Método A] Gancho de Busca Google", "[Método A] Link do Post Facebook/Instagram",
+            "[Método A] Gancho de Busca Google", "Link Biblioteca Meta (Criativos Ao Vivo)",
             "[Método A] Views Reais no Player", "[Método A] Gasto Real Auditado (R$)"
         ]
 
@@ -52,11 +52,14 @@ class ExcelExporter:
             gasto_str = f"R$ {m.get('gasto_estimado_brl', 0):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
             fat_str = f"R$ {m.get('faturamento_estimado_brl', 0):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
             
+            pname = o.get("page_name", "")
+            lib_url = o.get("metodo_a_post_url") or f"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&q={pname.replace(' ', '%20')}"
+            
             row = [
                 f"#{row_idx - 1}",
                 o.get("setor", "Geral"),
                 o.get("nome", o.get("page_name", "")),
-                o.get("page_name", ""),
+                pname,
                 f"{o.get('ads_count', 1)} ads ativos",
                 f"{o.get('max_days', 20)} dias no ar",
                 views_str,
@@ -68,7 +71,7 @@ class ExcelExporter:
                 o.get("destination_lp", ""),
                 o.get("headline", ""),
                 o.get("metodo_a_gancho", ""),
-                o.get("metodo_a_post_url", ""),
+                lib_url,
                 o.get("metodo_a_views_reais", ""),
                 o.get("metodo_a_gasto_real", "")
             ]
