@@ -433,14 +433,15 @@ def criar_workspace_oferta(oferta, criar_no_orca=True, criar_espelho_desktop=Tru
 * **CPA Alvo para Escala Lucrativa (ROAS 2.0x):** R$ 31,00
 """)
 
-    # Arquivo 02: Copy da Landing Page no Padrão Lovable (8 Blocos Oficiais)
-    copy_path = os.path.join(work_dir, "02_COPY_PAGINA_LOVABLE_8_BLOCOS.md")
+    # Arquivo 02: Copy da Landing Page nos 8 Blocos do Método Thyerri (Deploy Local na Vercel)
+    copy_path = os.path.join(work_dir, "02_COPY_PAGINA_8_BLOCOS_VERCEL.md")
     with open(copy_path, "w", encoding="utf-8") as f:
-        f.write(f"""# 🌐 COPY OFICIAL NO FORMATO LOVABLE (8 BLOCOS EXATOS DO TEMPLATE THYERRI)
-## TEMPLATE OFICIAL: https://lovable.dev/projects/bee20dbf-6a5e-4781-a34f-3cfca36c199a
+        f.write(f"""# 🌐 ESTRUTURA DA LANDING PAGE: 8 BLOCOS DO MÉTODO THYERRI
+## HOSPEDAGEM & DEPLOY: VERCEL (CUSTO ZERO, 100% CONTROLE DE CÓDIGO)
 
-> **Instruções de Uso:** Abra seu projeto remixado no Lovable, cole este texto no chat e diga:  
-> *"Substitua a cópia atual da página bloco a bloco por este conteúdo, mantendo exatamente a estrutura, componentes e ordem dos 8 blocos."*
+> **Deploy Imediato:** A pasta `landing_page/` já contém o arquivo `index.html` pronto e o `vercel.json`.  
+> Para colocar no ar em menos de 30 segundos, basta abrir a pasta no terminal e rodar:  
+> `vercel --prod`
 
 ---
 
@@ -516,44 +517,117 @@ def criar_workspace_oferta(oferta, criar_no_orca=True, criar_espelho_desktop=Tru
   3. *Preciso pagar mensalidade?* Não! Pagamento único e acesso vitalício.
 """)
 
-    # Arquivo 03: Scripts de Criativos Método A
+    # GERAÇÃO DA PASTA PRONTA PARA VERCEL (landing_page/)
+    lp_dir = os.path.join(work_dir, "landing_page")
+    os.makedirs(lp_dir, exist_ok=True)
+    
+    # vercel.json
+    with open(os.path.join(lp_dir, "vercel.json"), "w", encoding="utf-8") as f:
+        f.write('{\n  "version": 2,\n  "cleanUrls": true,\n  "trailingSlash": false\n}\n')
+        
+    # deploy_vercel.bat
+    with open(os.path.join(lp_dir, "deploy_vercel.bat"), "w", encoding="utf-8") as f:
+        f.write('@echo off\ncd /d "%~dp0"\nvercel --prod\npause\n')
+
+    # Arquivo 03: Scripts de Criativos Método A (Framework Oficial Thyerri - 3 Ângulos e Situações Distintas)
     scripts_path = os.path.join(work_dir, "03_SCRIPTS_CRIATIVOS_METODO_A.md")
     with open(scripts_path, "w", encoding="utf-8") as f:
-        f.write(f"""# 🎬 ROTEIROS DE CRIATIVOS: MÉTODO A (META ADS 9:16)
+        f.write(f"""# 🎬 ROTEIROS DE CRIATIVOS: FRAMEWORK DOS 3 ÂNGULOS (MÉTODO THYERRI - MÓDULO 4 AULA 3)
 
 > **Oferta:** {nome_oferta}
-> **Objetivo:** Tráfego Direto para Página de Vendas (Retenção nos 3 primeiros segundos)
+> **Objetivo:** Tráfego Direto para Página de Vendas (Retenção nos 3 primeiros segundos + Validação dos 3 Ângulos)
+> **Referência Oficial:** Whimsical Mind Map `https://whimsical.com/zz788/framework-criacao-dos-tres-criativos-mind-map-BDXjeBbi23Gx7sPouJ5KVD`
+> **Ferramentas de Produção:** ElevenLabs (Voz "Matheus Santos" ou conversacional natural) + B-roll TikTok/Reels + CapCut (Legendas dinâmicas)
 
 ---
 
-### 🎥 ROTEIRO 1: "O ERRO COMUM QUE QUEIMA O COMPONENTE"
-* **Formato:** Vídeo gravado na bancada/oficina com câmera na mão ou tela dividida.
-* **Gancho Visual (0 a 3s):** Close nas mãos com o multímetro tocando o componente enquanto faísca ou com o texto na tela: *"NÃO TROQUE A PLACA ANTES DE VER ISSO!"*
-* **Áudio (0 a 5s):**
-  > *"{oferta.get('gancho_metodo_a', 'Se o aparelho apresentar esse sinal, nunca cometa o erro de condenar a peça mais cara.')}"*
-* **Desenvolvimento (5 a 25s):**
-  > *"Em mais de 80% dos casos, o defeito não é o motor nem a placa principal. É apenas a resistência de um sensor que descalibrou. Se você testar na escala de 20k e der fora dessa tabela aqui, o reparo custa menos de R$ 15 e você resolve em 10 minutos."*
-* **Demonstração da Ferramenta (25 a 40s):**
-  > *"(Mostra a tela do celular abrindo o {nome_oferta}). Olha só: você seleciona a marca, o modelo e em 5 segundos já tem o valor exato da resistência e onde testar."*
-* **Chamada para Ação - CTA (40 a 50s):**
-  > *"Para parar de perder tempo e ter essa tabela sempre de bolso no seu celular por apenas {esteira['front_preco']}, toca no botão 'Saiba Mais' aqui embaixo agora mesmo."*
+### ⚠️ A REGRA CRÍTICA DO THYERRI: VARIAR AS 3 SITUAÇÕES DE USO
+Nunca cometa o erro de fazer 3 criativos abordando o mesmo cenário isolado. Cada ângulo psicológico abaixo deve explorar uma **situação prática diferente** de aplicação do material:
+1. **Situação A (Dor):** A dúvida na hora H, o erro cometido, a frustração imediata.
+2. **Situação B (Desejo):** A facilidade de chegar para executar e ter a resposta na ponta da língua.
+3. **Situação C (Resultado):** A finalização com segurança, sem chute, eliminando retrabalho e prejuízo.
 
 ---
 
-### 🎥 ROTEIRO 2: "COMPARATIVO: JEITO VELHO VS JEITO NOVO"
-* **Formato:** Tela dividida verticalmente.
-* **Lado Esquerdo (Jeito Velho):** Cara estressado, cheio de papéis e manuais rasgados, testando fios no escuro.
-* **Lado Direito (Jeito Novo):** Técnico abrindo o celular, olhando a tabela em 10 segundos e dando joinha.
-* **Áudio:**
-  > *"De um lado: 3 horas testando peça no escuro, gastando combustível para comprar peça errada. Do outro: abrir o {nome_oferta} no celular, bater o olho no código e acertar de primeira. O link está na bio ou no botão aqui embaixo."*
+### 🎥 CRIATIVO 1: ÂNGULO DA DOR (35 a 40 segundos)
+* **Situação Abordada (Situação A):** O erro comum ou a dúvida paralisante cometida no dia a dia.
+* **Bloco 1: Gancho Visual e Falado (0 a 3s):**
+  * *Visual:* Close no problema acontecendo / tela dividida com erro / texto impactante na tela: **"NUNCA FAÇA ISSO ANTES DE CONFERIR A REFERÊNCIA!"**
+  * *Áudio:* > *"{oferta.get('gancho_metodo_a', 'Se você estiver diante desse problema, nunca cometa o erro de tomar a decisão mais cara no chute.')}"*
+* **Bloco 2: Aprofundamento da Dor (3 a 20s):**
+  * *Visual:* Imagem de frustração, dúvida ou retrabalho / take do TikTok de alguém com dificuldade.
+  * *Áudio:* > *"A maioria das pessoas tenta adivinhar o defeito ou resolver na tentativa e erro. Dá aquele medo de condenar uma peça boa, gastar dinheiro à toa e ainda ter que voltar para consertar o que fez de errado."*
+* **Bloco 3: Apresentação da Solução (20 a 28s):**
+  * *Visual:* Transição para o {nome_oferta} aberto no celular ou impresso na mão.
+  * *Áudio:* > *"Foi exatamente por isso que desenvolvemos o {nome_oferta}. Você abre no celular em 5 segundos, consulta a tabela visual e sabe na hora exatamente o que está acontecendo."*
+* **Bloco 4: Demonstração Prática (28 a 34s):**
+  * *Visual:* Mãos folheando as fichas impressas ou navegando pelo índice interativo na tela.
+  * *Áudio:* > *"É só bater o olho na referência, seguir o passo a passo e eliminar qualquer dúvida sem depender de ninguém."*
+* **Bloco 5: Chamada para Ação - CTA (34 a 40s):**
+  * *Visual:* Mockup 3D + seta apontando para o botão inferior com o preço {esteira['front_preco']}.
+  * *Áudio:* > *"Toque no botão 'Saiba Mais' aqui embaixo e garanta agora o seu acesso de bolso por apenas {esteira['front_preco']}."*
 
 ---
 
-### 🎥 ROTEIRO 3: "A TABELA QUE TODO PROFISSIONAL DEVERIA TER"
-* **Formato:** Demonstração estática de print interativo com zoom dramático.
-* **Texto na Tela:** *"Salve esse vídeo antes que você perca dinheiro."*
-* **Áudio:**
-  > *"Se você trabalha com isso e ainda não tem os valores exatos de teste salvos no celular, você está pagando para trabalhar. Toque em 'Saiba Mais' e baixe a tabela completa antes que saia do ar."*
+### 🎥 CRIATIVO 2: ÂNGULO DO DESEJO (30 a 35 segundos)
+* **Situação Abordada (Situação B):** A facilidade e rapidez de execução no campo ou em casa.
+* **Bloco 1: Gancho (0 a 3s):**
+  * *Visual:* Execução limpa e rápida / técnico ou pessoa agindo com autoridade / texto: **"IMAGINA RESOLVER ISSO EM MENOS DE 5 MINUTOS?"**
+  * *Áudio:* > *"Imagina chegar diante dessa situação e saber exatamente qual configuração e parâmetro utilizar sem perder tempo?"*
+* **Bloco 2: Aprofundamento do Desejo (3 a 18s):**
+  * *Visual:* Cenas rápidas de trabalho organizado, ferramentas limpas e testes precisos.
+  * *Áudio:* > *"Sem ficar trocando de método, sem testar no escuro e sem ficar adivinhando se fez tudo certo. Você já sabe onde olhar e o que cada valor ou reação significa."*
+* **Bloco 3 e 4: Apresentação & Demonstração (18 a 28s):**
+  * *Visual:* Celular na bancada mostrando o passo a passo visual e as cores dos esquemas.
+  * *Áudio:* > *"Com o {nome_oferta}, você tem uma sequência simples: consultar, comparar e aplicar. Um material prático e direto ao ponto para consultar a qualquer hora no celular."*
+* **Bloco 5: CTA (28 a 35s):**
+  * *Visual:* Botão com selo de acesso imediato por {esteira['front_preco']}.
+  * *Áudio:* > *"Clique no botão aqui embaixo e tenha essa consulta prática sempre ao seu lado por apenas {esteira['front_preco']}."*
+
+---
+
+### 🎥 CRIATIVO 3: ÂNGULO DO RESULTADO FINAL (Até 30 segundos)
+* **Situação Abordada (Situação C):** Conclusão do serviço/problema com confiança, sem retrabalho e com alívio mental.
+* **Bloco 1: Gancho (0 a 3s):**
+  * *Visual:* Alívio, joinha de aprovação, cliente satisfeito ou tarefa finalizada / texto: **"PARE DE RESOLVER NO CHUTE."**
+  * *Áudio:* > *"Essa dúvida pode deixar de ser um pesadelo e virar uma certeza absoluta em poucos segundos."*
+* **Bloco 2: Aprofundamento do Resultado (3 a 15s):**
+  * *Visual:* Comparativo antes (confuso) vs depois (organizado com o material).
+  * *Áudio:* > *"Você para de trabalhar no escuro, elimina o retrabalho e ganha a segurança de tomar a decisão certa logo na primeira tentativa."*
+* **Bloco 3 e 4: A Ferramenta em Ação (15 a 24s):**
+  * *Visual:* Zoom dramático nas fichas práticas e nos valores de referência.
+  * *Áudio:* > *"Esse é o resultado que o {nome_oferta} entrega: decisões mais rápidas, economia de tempo e total confiança no seu bolso."*
+* **Bloco 5: CTA Rápido (24 a 30s):**
+  * *Visual:* Botão "Saiba Mais" em destaque.
+  * *Áudio:* > *"Clique no botão abaixo e garanta o seu acesso imediato por apenas {esteira['front_preco']}."*
+
+---
+
+### 🎙️ TEXTOS LIMPOS PARA GERAR NO ELEVENLABS (TEXT-TO-SPEECH)
+*Copie e cole diretamente na ferramenta com a voz 'Matheus Santos' ou tom conversacional natural:*
+
+#### Copy 1 (Dor - ~38s):
+```text
+Se você estiver diante desse problema, nunca cometa o erro de tomar a decisão mais cara no chute. A maioria das pessoas tenta adivinhar o defeito ou resolver na tentativa e erro. Dá aquele medo de condenar uma peça boa, gastar dinheiro à toa e ainda ter que voltar para consertar o que fez de errado. Foi exatamente por isso que desenvolvemos o {nome_oferta}. Você abre no celular em 5 segundos, consulta a tabela visual e sabe na hora exatamente o que está acontecendo. É só bater o olho na referência, seguir o passo a passo e eliminar qualquer dúvida sem depender de ninguém. Toque no botão Saiba Mais aqui embaixo e garanta agora o seu acesso de bolso por apenas {esteira['front_preco']}.
+```
+
+#### Copy 2 (Desejo - ~32s):
+```text
+Imagina chegar diante dessa situação e saber exatamente qual configuração e parâmetro utilizar sem perder tempo? Sem ficar trocando de método, sem testar no escuro e sem ficar adivinhando se fez tudo certo. Você já sabe onde olhar e o que cada valor ou reação significa. Com o {nome_oferta}, você tem uma sequência simples: consultar, comparar e aplicar. Um material prático e direto ao ponto para consultar a qualquer hora no celular. Clique no botão aqui embaixo e tenha essa consulta prática sempre ao seu lado por apenas {esteira['front_preco']}.
+```
+
+#### Copy 3 (Resultado Final - ~28s):
+```text
+Essa dúvida pode deixar de ser um pesadelo e virar uma certeza absoluta em poucos segundos. Você para de trabalhar no escuro, elimina o retrabalho e ganha a segurança de tomar a decisão certa logo na primeira tentativa. Esse é o resultado que o {nome_oferta} entrega: decisões mais rápidas, economia de tempo e total confiança no seu bolso. Clique no botão abaixo e garanta o seu acesso imediato por apenas {esteira['front_preco']}.
+```
+
+---
+
+### 🎬 CHECKLIST DE GRAVAÇÃO E EDIÇÃO NO CAPCUT
+1. **Vídeos de Apoio (B-roll):** Baixar 4 a 6 vídeos curtos no TikTok com palavras-chave do nicho.
+2. **Material Físico Impresso:** Imprimir a capa e as páginas mais visuais em folha A4. Gravar takes de 5 segundos folheando na bancada/mesa.
+3. **Sincronia Áudio-Vídeo:** O corte do vídeo deve mudar a cada 2 a 3 segundos acompanhando o ritmo da voz do ElevenLabs.
+4. **Legendas Dinâmicas:** Adicionar legendas automáticas no CapCut (estilo Youtuber/TikTok: palavras em amarelo e branco com destaque em negrito).
 """)
 
     # Arquivo 04: Especificação do Entregável
