@@ -433,84 +433,87 @@ def criar_workspace_oferta(oferta, criar_no_orca=True, criar_espelho_desktop=Tru
 * **CPA Alvo para Escala Lucrativa (ROAS 2.0x):** R$ 31,00
 """)
 
-    # Arquivo 02: Copy da Landing Page de Alta Conversão
-    copy_path = os.path.join(work_dir, "02_COPY_LANDING_PAGE_ALTA_CONVERSAO.md")
+    # Arquivo 02: Copy da Landing Page no Padrão Lovable (8 Blocos Oficiais)
+    copy_path = os.path.join(work_dir, "02_COPY_PAGINA_LOVABLE_8_BLOCOS.md")
     with open(copy_path, "w", encoding="utf-8") as f:
-        f.write(f"""# ✍️ COPY DA LANDING PAGE: {nome_oferta.upper()}
+        f.write(f"""# 🌐 COPY OFICIAL NO FORMATO LOVABLE (8 BLOCOS EXATOS DO TEMPLATE THYERRI)
+## TEMPLATE OFICIAL: https://lovable.dev/projects/bee20dbf-6a5e-4781-a34f-3cfca36c199a
 
-> **Formato:** Página de Vendas Direta de Alta Conversão para Micro-Ferramentas de Baixo Ticket
-> **Diferencial Competitivo:** Resposta Rápida • Zero enrolação teórica • Pronto no Celular
-
----
-
-### [SEÇÃO 1: BARRA DE NOTIFICAÇÃO SUPERIOR]
-🔴 **ACESSO IMEDIATO LIBERADO:** Versão Atualizada 2026 com Consulta Rápida de Bolso.
+> **Instruções de Uso:** Abra seu projeto remixado no Lovable, cole este texto no chat e diga:  
+> *"Substitua a cópia atual da página bloco a bloco por este conteúdo, mantendo exatamente a estrutura, componentes e ordem dos 8 blocos."*
 
 ---
 
-### [SEÇÃO 2: HERO SECTION (DOBRA 1)]
-* **Superheadline:** PARA TÉCNICOS E PROFISSIONAIS QUE NÃO TÊM TEMPO A PERDER
+### [BLOCO 1: HERO SECTION (DOBRA 1)]
+* **Tag de Topo:** `{oferta.get('subnicho_adj', 'GUIA VISUAL DE BOLSO')}`
 * **Headline Principal:**
   # "{oferta.get('angulo_adj', 'A Resposta Certa na Palma da Sua Mão em Menos de 30 Segundos')}"
 * **Subheadline:**
-  *Descubra exatamente onde está a falha sem precisar testar componentes às cegas, sem perder horas em esquemas complicados e sem o risco de queimar placas caras.*
-* **Elemento Visual:**
-  `[MOCKUP 3D: Celular exibindo o WebApp/Tabela de Consulta Aberta + Versão PDF de Bolso]`
+  *Descubra exatamente onde está a falha ou como agir sem tentativa e erro, sem perder horas em teorias cansativas e com segurança total.*
+* **Tags de Benefício (Pílulas):**
+  `[Consulta em 30 Segundos]` `[Fichas Ilustradas]` `[Acesso Vitalício no Celular]`
 * **Botão CTA Principal (Verde Vibrante):**
-  👉 **QUERO TER ACESSO À FERRAMENTA AGORA POR APENAS {esteira['front_preco']}**
-* **Micro-texto de Confiança:** *Acesso Vitalício Imediato • Download em 1 Clique • Garantia Blindada de 7 Dias*
+  👉 **QUERO TER ACESSO À FERRAMENTA AGORA**
+* **Micro-texto de Confiança:** *Acesso Vitalício Imediato • Download em 1 Clique • Garantia Blindada de 15 Dias*
 
 ---
 
-### [SEÇÃO 3: O GRANDE INIMIGO COMUM (A DOR QUE DÓI NO BOLSO)]
-Você já passou por isso?
-* Pegar um equipamento ou serviço para fazer, passar 3 horas testando peça por peça e no final descobrir que era apenas um detalhe bobo?
-* Ficar inseguro na frente do cliente sem saber se a peça realmente está queimada ou se é erro de sensor?
-* Gastar dinheiro do próprio bolso comprando placa nova para descobrir que o defeito continuava lá?
-
-**O problema não é sua competência. O problema é que a maioria dos manuais foram feitos para engenheiros de fábrica, não para quem está no campo de batalha.**
+### [BLOCO 2: CARROSSEL INTERATIVO DE PÁGINAS (FOLHEAMENTO)]
+* **Título da Seção:** Veja por dentro do material antes de comprar
+* **Subtítulo:** Folheie as fichas visuais ilustradas prontas para salvar no celular ou imprimir:
+* **Instrução de Mídia:** *Inserir as 10 imagens `.webp` das páginas mais atraentes do PDF/ferramenta.*
 
 ---
 
-### [SEÇÃO 4: A SOLUÇÃO DEFINITIVA (O MECANISMO ÚNICO)]
-Apresentamos o **{nome_oferta}**:
-Não é um curso com 40 horas de enrolação que você nunca vai ter tempo de assistir.
-É uma **Ferramenta de Apoio Prático** feita para você consultar em 30 segundos:
-1. **Bata o Olho:** Localize a marca, modelo ou sintoma.
-2. **Veja o Diagnóstico:** A tabela mostra a resistência exata, a voltagem esperada e o teste definitivo.
-3. **Resolva Sem Dúvidas:** Faça o reparo com 100% de certeza.
+### [BLOCO 3: O QUE VOCÊ ENCONTRA NO MATERIAL]
+* **Título da Seção:** Um Passo a Passo Visual para Cada Momento da Sua Execução
+* **Card 1:** Diagnóstico Rápido e Fichas de Referência Imediata.
+* **Card 2:** Parâmetros, Medições e Valores de Trabalho sem tentativa e erro.
+* **Card 3:** Os 5 Erros Fatais que geram prejuízo e como evitá-los.
+* **Card 4:** Checklist Operacional para conferir em segundos.
+* **Imagem de Contexto:** *Foto realista de alguém segurando o material na bancada/campo de trabalho.*
 
 ---
 
-### [SEÇÃO 5: O QUE VOCÊ VAI RECEBER]
-* ✅ **Tabela Mestre em Alta Resolução:** Pronta para consultar no celular ou imprimir plastificada para a bancada.
-* ✅ **Mecanismo de Busca Rápida:** Encontre qualquer código de erro ou sintoma por palavras-chave.
-* ✅ **Guia Anti-Erros Graves:** Os 5 erros mais comuns que queimam peças e como evitá-los.
-* ✅ **Bônus Especial #1:** Checklist de Diagnóstico em Domicílio (para nunca esquecer nenhuma ferramenta).
-* ✅ **Bônus Especial #2:** Acesso ao Grupo VIP de Atualizações.
+### [BLOCO 4: BARRA DE URGÊNCIA PROMOCIONAL]
+⚡ **CONDIÇÃO ESPECIAL DE LANÇAMENTO:** Oferta promocional por tempo limitado com 4 bônus inclusos.
 
 ---
 
-### [SEÇÃO 6: CHECKOUT & OFERTA IRRESISTÍVEL]
-* Preço Normal Fora da Campanha: ~R$ 197,00~
-* **Hoje por Apenas: {esteira['front_preco']}** (ou até 4x no cartão)
-
-👉 **[CLIQUE AQUI PARA DESBLOQUEAR SEU ACESSO IMEDIATO]**
-
----
-
-### [SEÇÃO 7: GARANTIA BLINDADA DE 7 DIAS]
-Teste o **{nome_oferta}** na prática. Se no seu primeiro atendimento ou reparo você achar que ele não te economizou pelo menos 2 horas de trabalho, basta mandar uma mensagem que devolvemos 100% do seu dinheiro. Sem perguntas e sem letras miúdas.
+### [BLOCO 5: PARA QUEM FOI DESENVOLVIDO]
+* **Título da Seção:** Desenvolvido Para Quem Precisa de Resposta Prática
+* **Card 1:** Para quem não tem tempo de assistir 40 horas de curso teórico.
+* **Card 2:** Para quem já perdeu dinheiro ou passou vergonha tentando adivinhar sem método.
+* **Card 3:** Para quem quer ter uma ferramenta de consulta de bolso confiável.
 
 ---
 
-### [SEÇÃO 8: PERGUNTAS FREQUENTES (FAQ)]
-* **1. Como eu recebo a ferramenta?**
-  *Imediatamente após a confirmação do pagamento, você recebe os links no seu e-mail e WhatsApp.*
-* **2. Funciona no celular?**
-  *Sim, foi 100% otimizada para abrir no smartphone direto na oficina ou na casa do cliente.*
-* **3. Preciso pagar mensalidade?**
-  *Não! O acesso é único e vitalício.*
+### [BLOCO 6: TUDO QUE VOCÊ VAI RECEBER (+ 4 BÔNUS COMPLEMENTARES)]
+* **Produto Principal:** **{nome_oferta}**
+* **Bônus #1:** {esteira['bump1_nome']}
+* **Bônus #2:** {esteira['bump2_nome']}
+* **Bônus #3:** Guia Rápido de Prevenção de Erros Graves
+* **Bônus #4:** Checklist de Consulta Rápida em Domicílio
+
+---
+
+### [BLOCO 7: ESCOLHA O SEU PLANO (ANCORAGEM DE PREÇO)]
+
+| Item | PLANO BÁSICO | PLANO COMPLETO (RECOMENDADO) |
+| :--- | :---: | :---: |
+| **{nome_oferta}** | ✅ Incluso | ✅ Incluso |
+| **Os 4 Bônus Exclusivos** | ❌ | ✅ Inclusos |
+| **Valor:** | **R$ 17,90** | **R$ 27,90** |
+| **Botão:** | [Quero Apenas o Básico] | 👉 **[QUERO O PLANO COMPLETO COM 4 BÔNUS]** |
+
+---
+
+### [BLOCO 8: GARANTIA DE 15 DIAS E PERGUNTAS FREQUENTES]
+* **Garantia Incondicional de 15 Dias:** Se em até 15 dias você achar que o material não te economizou tempo e dinheiro, devolvemos 100% do valor.
+* **FAQ:**
+  1. *Como eu recebo o acesso?* Acesso imediato por e-mail e WhatsApp logo após a compra.
+  2. *Funciona no celular?* 100% otimizado para qualquer smartphone, tablet ou computador.
+  3. *Preciso pagar mensalidade?* Não! Pagamento único e acesso vitalício.
 """)
 
     # Arquivo 03: Scripts de Criativos Método A
@@ -586,6 +589,65 @@ Recursos obrigatórios:
 * **Dimensões:** Formato A4 (210 x 297 mm) e Formato Card Smartphone (1080 x 1920 px).
 * **Cores Principais:** Fundo Escuro (#0A2540) com realces em Amarelo Alerta (#FFB300) e Verde Confirmação (#00D4B2).
 * **Tipografia:** Sans-Serif legível (Inter ou Roboto) tamanho mínimo 11pt para garantir leitura rápida com pouca luz.
+""")
+
+    # Arquivo 04: Pipeline de Mockups e Carrossel
+    mockups_path = os.path.join(entregavel_dir, "pipeline_mockups_e_carrossel.md")
+    with open(mockups_path, "w", encoding="utf-8") as f:
+        f.write(f"""# 🎨 PIPELINE OFICIAL DE MOCKUPS E CARROSSEL (MÉTODO THYERRI - MÓDULO 4)
+
+> **Regra do Módulo 4 (Aula 2):**  
+> *"NUNCA gere os mockups em um chat novo. Use sempre o MESMO chat da IA onde você gerou o conteúdo do produto para preservar 100% da identidade visual, iluminação e atmosfera."*
+
+---
+
+### 1. Sequência de Prompts para Criar os Mockups
+
+#### Passo 1: O Mockup do Produto Principal (Hero Section)
+```text
+Com base no material que acabamos de criar ("{nome_oferta}"), crie o MOCKUP 3D PRINCIPAL DO PRODUTO:
+- Um smartphone moderno ou tablet aberto mostrando a capa e a primeira ficha visual.
+- Fundo escuro premium (#0A192F) com luzes suaves em ciano e âmbar na base.
+- Renderização hiper-realista em alta resolução, limpa e profissional.
+```
+
+#### Passo 2: Os Mockups dos 4 Bônus Individuais
+```text
+Agora gere os 4 MOCKUPS INDIVIDUAIS para os 4 bônus, mantendo a identidade visual mas diferenciando a cor e ícone de cada um:
+1. Bônus 1: "{esteira['bump1_nome']}"
+2. Bônus 2: "{esteira['bump2_nome']}"
+3. Bônus 3: "Guia Rápido de Prevenção de Erros Graves"
+4. Bônus 4: "Checklist de Consulta Rápida em Domicílio"
+Gere cada mockup em formato quadrado (1:1).
+```
+
+#### Passo 3: O Mockup Master da Composição Completa (Plano Completo)
+```text
+Agora crie o MOCKUP MASTER FINAL:
+- No centro: O {nome_oferta} aberto em destaque.
+- Ao redor: Os 4 cards dos bônus dispostos em leque elegante.
+- Ao fundo: Folhas e fichas flutuando suavemente em perspectiva 3D com iluminação volumétrica.
+- Resolução ultra-nítida e visual de produto premium de alta conversão.
+```
+
+---
+
+### 2. Pipeline de Otimização WebP (Anti-Lentidão no Mobile)
+1. **Remover Fundo:** Canva (600x600 px) -> Baixar PNG com fundo transparente.
+2. **Compressão no Squoosh (`squoosh.app`):** Converter para WebP mantendo transparência.
+3. **Carrossel de 10 Imagens:** Baixar as 10 páginas mais atraentes e converter em lote para `.webp`.
+
+---
+
+### 3. Prompt de Inserção das Imagens no Lovable
+```text
+Adicione as imagens que acabei de enviar aos respectivos componentes:
+1. Imagem do Mockup Principal: Posicione no Hero Section (Bloco 1) e no card do Plano Básico (Bloco 7).
+2. Imagem do Mockup Master: Posicione no card do Plano Completo (Bloco 7) e no Bloco 6 (Tudo o que você vai receber).
+3. As 4 imagens dos Bônus: Posicione cada uma no seu respectivo card de bônus no Bloco 6.
+4. As 10 imagens do Carrossel: Insira no componente Carrossel (Bloco 2) com transição suave.
+5. Imagem de Contexto: Insira no Bloco 3 ao lado dos 4 cards de conteúdo.
+```
 """)
 
     # Arquivo workspace_meta.json
