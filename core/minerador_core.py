@@ -79,19 +79,36 @@ def extract_real_lp(href):
             params = urllib.parse.parse_qs(parsed.query)
             target = params.get("u", [""])[0]
             if target:
-                return urllib.parse.unquote(target)
+                href = urllib.parse.unquote(target)
         except:
             pass
-    if ("http" in href or "wa.me" in href) and "facebook.com" not in href and "fb.com" not in href:
+
+    # FILTRO ESTRITO: NUNCA permitir redes sociais como Landing Page de Tráfego Direto
+    social_and_chat = [
+        "instagram.com", "facebook.com", "fb.com", "fb.me", "linktr.ee",
+        "wa.me", "api.whatsapp.com", "whatsapp.com", "threads.net", "tiktok.com"
+    ]
+    if any(s in href.lower() for s in social_and_chat):
+        return ""
+
+    if href.startswith("http://") or href.startswith("https://"):
         return href
     return ""
 
 def is_noise_advertiser(pname, lp_url):
     combined = (pname + " " + lp_url).lower()
     noise_patterns = [
+        # Aplicativos de novelas / drama
         "idrama", "short tv", "reelshort", "drama reels", "play.google.com/store/apps/details?id=shorts",
-        "shopee", "mercado livre", "aliexpress", "amazon", "imoveis", "corretora", "pizzaria",
-        "alvest", "revisabuco", "magazine", "vestuario", "calcados"
+        # Marketplaces de produto físico
+        "shopee", "mercado livre", "aliexpress", "amazon", "magazine", "shein",
+        # Nichos não-infoproduto (imóveis, restaurantes)
+        "imoveis", "corretora", "pizzaria", "alvest", "revisabuco", "aluguel",
+        # PRODUTOS FÍSICOS (PROIBIDOS NO LOW TICKET THYERRI)
+        "lojadoutorsaude", "doutor saude", "cinta", "aparelho físico", "frete gratis", "frete",
+        "capsula", "frasco", "suplemento", "colageno", "emagrecedor físico", "remedio",
+        # Redes sociais / links de agência sem produto
+        "instagram.com", "fabricadelowticket.app"
     ]
     return any(p in combined for p in noise_patterns)
 
